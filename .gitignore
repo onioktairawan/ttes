@@ -1,1 +1,15 @@
+# Node modules
+node_modules/
+
+# Environment config
+.env
+
+# Session file
+session/
+
+# VSCode settings (opsional)
+.vscode/
+
+# MacOS
+.DS_Store
 
