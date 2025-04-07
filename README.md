@@ -1,39 +1,53 @@
-# 🤖 WhatsApp Userbot - Multifungsi
+# 🤖 WhatsApp Userbot Multifungsi
 
-Bot WhatsApp berbasis `baileys` dengan berbagai fitur lengkap: auto-respon, game (Susun Kata & Family 100), welcome custom, tag all, pin message, dan lainnya. Semua data disimpan dalam file JSON (tanpa database SQL).
-
----
-
-## 📂 Struktur Folder
-
-whatsapp-userbot/ ├── .env # Variabel lingkungan (nomor owner, dll) ├── .gitignore # File yang diabaikan oleh Git ├── README.md # Dokumentasi proyek ├── index.js # Entry point bot ├── package.json # Dependensi NPM │ ├── session/ # Folder penyimpanan sesi WA │ └── creds.json │ ├── handler/ # Handler perintah dan pesan │ ├── commandHandler.js │ └── messageHandler.js │ ├── lib/ # Library utilitas │ ├── logger.js │ ├── uptime.js │ └── utils.js │ ├── storage/ # Data penyimpanan jangka panjang │ ├── prefix.json │ ├── welcome.json │ ├── response.json │ ├── toggles.json │ ├── scores.json │ ├── susun_kata.json │ └── family100.json
+Userbot WhatsApp dengan fitur lengkap: stiker otomatis, auto-respon, game, manajemen grup, dan masih banyak lagi. Dibuat menggunakan [Baileys](https://github.com/WhiskeySockets/Baileys) tanpa SQL, hanya menggunakan penyimpanan file JSON.
 
 ---
 
-## 🛠️ Cara Menjalankan
+## 🚀 Fitur Utama
 
-1. Clone repository:
-    ```bash
-    git clone https://github.com/username/whatsapp-userbot.git
-    cd whatsapp-userbot
-    ```
-
-2. Install dependensi:
-    ```bash
-    npm install
-    ```
-
-3. Buat file `.env`:
-    ```env
-    OWNER=6281234567890
-    ```
-
-4. Jalankan bot:
-    ```bash
-    node index.js
-    ```
+| Fitur               | Deskripsi |
+|---------------------|-----------|
+| `.menu`             | Menampilkan daftar semua perintah |
+| `.stiker`           | Membuat stiker dari teks atau gambar (dengan reply) |
+| `.ping`             | Cek status bot: ping, lokasi IP, dan uptime |
+| `.setwelcome`       | Atur pesan welcome custom (dapat pakai placeholder `@user`, `#group`) |
+| `.addrespon`        | Tambahkan auto-respon ke pesan tertentu |
+| `.listrespon`       | Lihat daftar trigger auto-respon |
+| `.togglrespon`      | Aktif/nonaktifkan auto-respon di grup |
+| `.tagall`           | Mention semua anggota grup (bisa via reply atau tanpa) |
+| `.pin`              | Pin pesan dalam grup |
+| `.setprefix`        | Ganti prefix bot di grup (default: `.`) |
+| Game: Susun Kata    | Ketik `.susun` untuk mulai, skor disimpan otomatis |
+| Game: Family 100    | Ketik `.family100` untuk mulai, buat soal sendiri juga bisa! |
+| `.addkata`          | Tambahkan soal Susun Kata (khusus owner) |
+| `.addsoal`          | Tambahkan soal Family 100 (semua user bisa, dengan konfirmasi) |
+| `.resetscore`       | Reset skor game (khusus admin) |
 
 ---
 
-## ⚙️ Fitur Utama
+## 📁 Struktur Folder
 
+whatsapp-userbot/ ├── .env ├── .gitignore ├── README.md ├── index.js ├── package.json │ ├── session/ │ └── creds.json │ ├── handler/ │ ├── commandHandler.js │ └── messageHandler.js │ ├── lib/ │ ├── logger.js │ ├── uptime.js │ └── utils.js │ ├── storage/ │ ├── prefix.json │ ├── welcome.json │ ├── response.json │ ├── toggles.json │ ├── scores.json │ ├── susun_kata.json │ └── family100.json
+
+
+---
+
+## ⚙️ Instalasi & Menjalankan
+
+```bash
+# 1. Clone repo
+git clone https://github.com/username/whatsapp-userbot.git
+cd whatsapp-userbot
+
+# 2. Install dependency
+npm install
+
+# 3. Buat file .env
+cp .env.example .env
+# lalu isi nomor owner dan lainnya di .env
+
+# 4. Jalankan bot
+node index.js
+📝 Credits
+Baileys
